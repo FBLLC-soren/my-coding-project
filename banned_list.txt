@@ -1,0 +1,14 @@
+# Load your full banned list from the text file
+with open("banned_list.txt", "r") as f:
+    banned_words = [line.strip().lower() for line in f if line.strip()]
+
+draft = "We need to leverage our holistic ecosystem to streamline the cutting-edge procurement process."
+
+# Search for banned words
+found = [word for word in banned_words if word in draft.lower()]
+
+if found:
+    print(f"Banned words detected: {', '.join(found)}")
+    print("Recommendation: Strip the fluff. Re-read the McMurtry rules.")
+else:
+    print("The draft is clean.")
